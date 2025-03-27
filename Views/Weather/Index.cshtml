@@ -1,0 +1,26 @@
+﻿@model WeatherModel
+
+<h1>Weather Information</h1>
+
+<form method="get">
+    <input type="text" name="city" placeholder="Enter city name" />
+    <br />
+    <label for="lat">Latitude:</label>
+    <input type="text" name="lat" placeholder="Enter latitude" />
+    <br />
+    <label for="lon">Longitude:</label>
+    <input type="text" name="lon" placeholder="Enter longitude" />
+    <br />
+    <button type="submit">Get Weather</button>
+</form>
+
+@if (Model != null)
+{
+    <h2>Weather in @Model.City</h2>
+    <p>Description: @Model.Description</p>
+    <p>Temperature: @Model.Temperature °C</p>
+    <p>Humidity: @Model.Humidity %</p>
+    <p>Pressure: @Model.Pressure hPa</p>
+    <p>Wind Speed: @Model.WindSpeed m/s</p>
+    <p>Coordinates: Latitude @Model.Latitude, Longitude @Model.Longitude</p>
+}
